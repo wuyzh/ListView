@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/model_button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加新的一项"/>
+        <Button
+            android:id="@+id/model_button_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="测试按钮 2"/>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/list"
+        android:transcriptMode="disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line1"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:divider="#0000"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:dividerHeight="2dp"
+        android:scrollbars="none"/>
+
+</RelativeLayout>
