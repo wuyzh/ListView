@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="复用显示异常列表，背景会有异常，checkbox也会有异常"/>
+        <ListView
+            android:id="@+id/list_exception"
+            android:transcriptMode="disabled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line1"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:divider="#0000"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:dividerHeight="2dp"
+            android:scrollbars="none"/>
+    </LinearLayout>
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorLogItem"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/list_right"
+            android:transcriptMode="disabled"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line1"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:divider="#0000"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:dividerHeight="2dp"
+            android:scrollbars="none"/>
+    </LinearLayout>
+
+
+</LinearLayout>

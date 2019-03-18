@@ -5,7 +5,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.wuyazhou.learn.listview.listdemo.ListPagerView;
+import com.wuyazhou.learn.listview.ImageLoadList.ImageLoadListPagerView;
+import com.wuyazhou.learn.listview.MultiplexException.MultiplexListPagerView;
+import com.wuyazhou.learn.listview.SegmentedLoading.SegmentedLoadingListPagerView;
 import com.wuyazhou.learn.logview.LogShowView;
 import com.wuyazhou.pagerview.ModelPagerView;
 import com.wuyazhou.pagerview.ViewPagerAdapter;
@@ -13,6 +15,9 @@ import com.wuyazhou.pagerview.ViewPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author wuyzh
+ * */
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager = null;
@@ -35,9 +40,12 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.view_pager);
         mViewPagerAdapter = new ViewPagerAdapter(mViews,mViewTitle, this);
         mViewPager.setAdapter(mViewPagerAdapter);
-        addViewPagerView("List",new ListPagerView(this));
+        addViewPagerView("复用异常",new MultiplexListPagerView(this));
+        addViewPagerView("分段加载",new SegmentedLoadingListPagerView(this));
+        addViewPagerView("图片加载",new ImageLoadListPagerView(this));
         addViewPagerView("标题二",new ModelPagerView(this));
         mViewPagerAdapter.notifyDataSetChanged();
+        mViewPager.setCurrentItem(2);
     }
 
     private void addViewPagerView(String title, View view){

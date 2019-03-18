@@ -84,12 +84,12 @@ public class LogShowView extends RelativeLayout implements LogShowViewContract {
         super.onVisibilityChanged(changedView, visibility);
         if (visibility == VISIBLE){
             if (!mShowLogThread.isAlive()){
-                mShowLogThread.start(this);
+                //mShowLogThread.start(this);
             }
 
         }else {
             if (mShowLogThread.isAlive()){
-                mShowLogThread.quit();
+                //mShowLogThread.quit();
             }
         }
     }

@@ -27,6 +27,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    /** 添加网络框架Retrofit*/
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    /** 添加RxJava 适配器供Retrofit使用*/
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    implementation "com.google.code.gson:gson:2.8.0"
+    /** 添加RxJava框架*/
+    implementation 'io.reactivex:rxjava:1.2.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
 
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6'

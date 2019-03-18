@@ -1,4 +1,4 @@
-package com.wuyazhou.learn.listview.listdemo;
+package com.wuyazhou.learn.listview.SegmentedLoading;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -11,20 +11,20 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.wuyazhou.learn.listview.R;
+import com.wuyazhou.learn.listview.bean.BrandItemInfo;
 
 import java.util.List;
 
 
 /**
- * @author  陈伟飞
- * 时间： 2018/7/26.
+ * @author  吴亚洲
  */
-public class ListViewAdapter extends BaseAdapter {
+public class SegmentListViewAdapter extends BaseAdapter {
 
     private Context mContext;
-    private List<String> mList = null;
+    private List<BrandItemInfo> mList = null;
 
-    public ListViewAdapter(Context context, List<String> list) {
+    public SegmentListViewAdapter(Context context, List<BrandItemInfo> list) {
         this.mContext = context;
         this.mList = list;
     }
@@ -34,7 +34,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public BrandItemInfo getItem(int position) {
         return mList.get(position);
     }
 
@@ -48,27 +48,25 @@ public class ListViewAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final ViewHolder holderView;
         //用于判断是否直播来展示不同style
-        String entity = mList.get(position);
+        BrandItemInfo entity = mList.get(position);
         Resources resources = mContext.getResources();
 
         if (convertView == null){
-            convertView = View.inflate(mContext, R.layout.list_item_layout, null);
+            convertView = View.inflate(mContext, R.layout.item_segment_layout, null);
             holderView = new ViewHolder();
-
+            holderView.convertView = convertView;
             holderView.textView = (TextView) convertView.findViewById(R.id.message);
-
             convertView.setTag(holderView);
         }else {
             holderView = (ViewHolder) convertView.getTag();
         }
 
-        holderView.textView.setTextColor(resources.getColor(R.color.green));
-        holderView.textView.setText(Html.fromHtml( "<font color=#97CB60>"+ mList.get(position)+"</font> "+ "<font color=#FFFFFF>"+ mList.get(position)+"</font>"));
-
+        holderView.textView.setText(Html.fromHtml( "<font color=#97CB60>"+ entity.brandEnName+"</font> "+ "<font color=#FFFFFF>"+ entity.brandEnName+"</font>"));
         return convertView;
     }
 
     public final class ViewHolder {
+        View convertView;
         TextView textView;
     }
 
